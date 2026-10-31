@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - PennyBook</title>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-light: #EFF6FF;
+            --success: #16A34A;
+            --success-light: #DCFCE7;
+            --dark: #0F172A;
+            --text: #334155;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: var(--text);
+            background-color: var(--bg);
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1E40AF, #2563EB);
+            color: white;
+            padding: 40px 32px 32px;
+            text-align: left;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        header h1 {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .meta-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 13px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 36px 32px;
+        }
+
+        .summary-card {
+            background: var(--primary-light);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+
+        .summary-card h3 {
+            color: var(--primary-dark);
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-card p {
+            font-size: 14px;
+            color: #1E3A8A;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--dark);
+            margin: 32px 0 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: var(--dark);
+            margin: 18px 0 8px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            font-size: 15px;
+        }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 14.5px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            text-align: left;
+        }
+
+        th {
+            background: #F1F5F9;
+            color: var(--dark);
+            padding: 12px 14px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-green {
+            background: var(--success-light);
+            color: var(--success);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .badge-blue {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .contact-box {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+
+        footer {
+            background: #F1F5F9;
+            padding: 24px 32px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            header, .content, footer {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="brand-badge">🛡️ PennyBook Official Privacy Policy</div>
+        <h1>Privacy Policy</h1>
+        <p>Personal Finance, Expense Tracking, Budgeting & Udhaar Ledger</p>
+        <div class="meta-bar">
+            <span><strong>Effective Date:</strong> October 31, 2026</span>
+            <span><strong>Application:</strong> PennyBook (<code>com.pennybook.expensetracker</code>)</span>
+            <span><strong>Developer:</strong> Javed Khan</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <!-- Quick Summary Card -->
+        <div class="summary-card">
+            <h3>🔒 Core Privacy Commitment: Local-First Financial Privacy</h3>
+            <p>Your financial transactions, budgets, investments, and personal debt/credit (Udhaar) records are stored <strong>strictly on your physical device</strong> in a private SQLite database. PennyBook does <strong>not</strong> upload, sync, or transmit your financial ledger to any external server or cloud database.</p>
+        </div>
+
+        <h2>1. Overview & Scope</h2>
+        <p>This Privacy Policy explains how <strong>PennyBook</strong> ("we", "our", or "the app"), developed by <strong>Javed Khan</strong>, manages data when you use the Android application. We are committed to safeguarding your personal financial privacy and providing transparent, clear disclosures regarding data storage, optional services, and device permissions.</p>
+
+        <h2>2. Local-First Financial Data Storage</h2>
+        <p>PennyBook is engineered with a client-side, local-first architecture:</p>
+        <ul>
+            <li><strong>On-Device SQLite Database:</strong> All financial entries—including income, expense transactions, category assignments, payment methods, monthly budgets, investment records, and friendly loans/Udhaar ledgers—are stored strictly on your local device storage via Android Room.</li>
+            <li><strong>No Financial Cloud Sync:</strong> We do not operate external financial servers or databases. Your personal financial ledger remains exclusively in your possession.</li>
+            <li><strong>No Mandatory Account Registration:</strong> You are not required to create an account, log in with an email, or provide government/bank identification to use PennyBook.</li>
+        </ul>
+
+        <h2>3. Third-Party Services, Advertisements & Subscriptions</h2>
+        <p>To support ongoing maintenance and feature development, PennyBook may incorporate trusted third-party developer platforms and monetization services:</p>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service / Provider</th>
+                        <th>Purpose</th>
+                        <th>Data Handled by Service</th>
+                        <th>Financial Ledger Access</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Google Play In-App Billing</strong><br>(Google LLC)</td>
+                        <td>Processing optional subscriptions and one-time premium purchases (such as ad-free upgrades).</td>
+                        <td>Transaction status, token receipts, and purchase confirmation handled directly by Google Play.</td>
+                        <td><span class="badge-green">Zero Access</span><br>Google does not see your personal ledger entries.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Advertising Partners</strong><br>(e.g., Google AdMob)</td>
+                        <td>Displaying advertisements to support the free tier of the application.</td>
+                        <td>Advertising ID, IP address, general device model, and ad performance diagnostics in compliance with Google Play Developer Policies.</td>
+                        <td><span class="badge-green">Zero Access</span><br>Ad SDKs have no access to your financial records or balance sheet.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>Decoupled Isolation:</strong> Network requests performed by advertising or Google Play Billing SDKs operate in complete isolation from the local Room database. Your financial records are never bundled with advertising identifiers or transmitted over the network.</p>
+
+        <h2>4. Android Device Permissions</h2>
+        <p>PennyBook requests only standard Android permissions necessary to deliver user-requested functionality:</p>
+        <ul>
+            <li><strong><code>POST_NOTIFICATIONS</code> (Android 13+):</strong> Used to deliver local notifications for payment due dates, bank loan EMI reminders, and daily scheduled auto-backup completion.</li>
+            <li><strong><code>SCHEDULE_EXACT_ALARM</code>:</strong> Used to schedule timely notifications for debt due dates and automated daily database backups at the user's configured hour.</li>
+            <li><strong><code>RECEIVE_BOOT_COMPLETED</code>:</strong> Used to reschedule active reminder alarms after your device restarts.</li>
+            <li><strong><code>INTERNET</code> & <code>ACCESS_NETWORK_STATE</code>:</strong> Utilized by Google Play Billing and advertising partner SDKs for purchase verification and ad delivery. Never used to upload financial data.</li>
+            <li><strong>Storage Access (SAF / External Storage):</strong> Used solely to allow you to save database backups, export reports (PDF, CSV, Excel), or restore backups from your device's <code>Documents/PennyBook</code> folder.</li>
+        </ul>
+
+        <h2>5. Data Ownership, Backup & Deletion</h2>
+        <p>You maintain 100% ownership and physical custody of your financial records:</p>
+        <ul>
+            <li><strong>Database Backup & Portability:</strong> You can create encrypted database backups or export your complete financial records into CSV, Microsoft Excel (`.xlsx`), or PDF format at any time.</li>
+            <li><strong>One-Tap Data Deletion:</strong> You can permanently erase all transactions, accounts, and settings at any time via <em>Settings → Privacy & Security → Reset & Clear All Data</em>.</li>
+            <li><strong>App Uninstallation:</strong> Uninstalling PennyBook immediately removes its internal private database sandbox from your device.</li>
+        </ul>
+
+        <h2>6. Children's Privacy (COPPA Compliance)</h2>
+        <p>PennyBook is a general audience personal finance application and is not directed towards children under the age of 13. We do not knowingly solicit or collect personal information from children.</p>
+
+        <h2>7. Security of Your Information</h2>
+        <p>Because your financial ledger resides on your device, its physical security is tied to your phone's native security features. We recommend protecting your device with a secure lock screen PIN, password, or biometric authentication.</p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect application improvements, service updates, or regulatory adjustments. Any revisions will be published on this webpage with an updated "Effective Date".</p>
+
+        <h2>9. Contact Information</h2>
+        <div class="contact-box">
+            <p>If you have any questions, feedback, or concerns regarding this Privacy Policy or your data privacy in PennyBook, please contact us at:</p>
+            <p><strong>Developer:</strong> Javed Khan<br>
+            <strong>Support Email:</strong> <a href="mailto:javed.apps.support@gmail.com" style="color: var(--primary); font-weight: 600;">javed.apps.support@gmail.com</a><br>
+            <strong>Application:</strong> PennyBook (<code>com.pennybook.expensetracker</code>)</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 PennyBook • Developed with ❤️ by Javed Khan • All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
