@@ -238,6 +238,7 @@
             <span><strong>Effective Date:</strong> October 31, 2026</span>
             <span><strong>Application:</strong> PennyBook (<code>com.pennybook.expensetracker</code>)</span>
             <span><strong>Developer:</strong> Javed Khan</span>
+            <span><strong>Policy URL:</strong> <a href="https://javedakhan2010.github.io/pennyBook-privacy-policy/" style="color: white; text-decoration: underline;">pennyBook-privacy-policy</a></span>
         </div>
     </header>
 
@@ -259,53 +260,32 @@
             <li><strong>No Mandatory Account Registration:</strong> You are not required to create an account, log in with an email, or provide government/bank identification to use PennyBook.</li>
         </ul>
 
-        <h2>3. Third-Party Services, Advertisements & Subscriptions</h2>
-        <p>To support ongoing maintenance and feature development, PennyBook may incorporate trusted third-party developer platforms and monetization services:</p>
-
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Service / Provider</th>
-                        <th>Purpose</th>
-                        <th>Data Handled by Service</th>
-                        <th>Financial Ledger Access</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Google Play In-App Billing</strong><br>(Google LLC)</td>
-                        <td>Processing optional subscriptions and one-time premium purchases (such as ad-free upgrades).</td>
-                        <td>Transaction status, token receipts, and purchase confirmation handled directly by Google Play.</td>
-                        <td><span class="badge-green">Zero Access</span><br>Google does not see your personal ledger entries.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Advertising Partners</strong><br>(e.g., Google AdMob)</td>
-                        <td>Displaying advertisements to support the free tier of the application.</td>
-                        <td>Advertising ID, IP address, general device model, and ad performance diagnostics in compliance with Google Play Developer Policies.</td>
-                        <td><span class="badge-green">Zero Access</span><br>Ad SDKs have no access to your financial records or balance sheet.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p><strong>Decoupled Isolation:</strong> Network requests performed by advertising or Google Play Billing SDKs operate in complete isolation from the local Room database. Your financial records are never bundled with advertising identifiers or transmitted over the network.</p>
+        <h2>3. Third-Party Services & Offline Architecture (Version 1.0.0)</h2>
+        <p>PennyBook Version 1.0.0 is engineered as a <strong>100% offline, local-first application</strong>:</p>
+        <ul>
+            <li><strong>Zero Advertising SDKs:</strong> Version 1.0.0 does not include advertising partner SDKs (such as Google AdMob). No advertising identifiers, analytics IDs, or device telemetry are collected or shared.</li>
+            <li><strong>Zero Billing SDKs:</strong> Version 1.0.0 does not include in-app billing libraries (such as Google Play Billing). The application is entirely free and self-contained with no purchase telemetry.</li>
+            <li><strong>Zero Analytics or Crash Trackers:</strong> We do not integrate third-party analytics (such as Firebase Analytics) or remote crash reporters. Your financial usage patterns remain completely private to you.</li>
+            <li><strong>Future Updates Notice:</strong> If future releases introduce optional monetization features (such as premium purchases or optional advertisements), this Privacy Policy will be revised prior to rollout. Any future integration will be strictly sandboxed and will never access, read, or transmit your personal financial ledger.</li>
+        </ul>
 
         <h2>4. Android Device Permissions</h2>
-        <p>PennyBook requests only standard Android permissions necessary to deliver user-requested functionality:</p>
+        <p>PennyBook requests only standard Android permissions necessary to deliver user-requested on-device functionality:</p>
         <ul>
             <li><strong><code>POST_NOTIFICATIONS</code> (Android 13+):</strong> Used to deliver local notifications for payment due dates, bank loan EMI reminders, and daily scheduled auto-backup completion.</li>
-            <li><strong><code>SCHEDULE_EXACT_ALARM</code>:</strong> Used to schedule timely notifications for debt due dates and automated daily database backups at the user's configured hour.</li>
-            <li><strong><code>RECEIVE_BOOT_COMPLETED</code>:</strong> Used to reschedule active reminder alarms after your device restarts.</li>
-            <li><strong><code>INTERNET</code> & <code>ACCESS_NETWORK_STATE</code>:</strong> Utilized by Google Play Billing and advertising partner SDKs for purchase verification and ad delivery. Never used to upload financial data.</li>
-            <li><strong>Storage Access (SAF / External Storage):</strong> Used solely to allow you to save database backups, export reports (PDF, CSV, Excel), or restore backups from your device's <code>Documents/PennyBook</code> folder.</li>
+            <li><strong><code>SCHEDULE_EXACT_ALARM</code>:</strong> Used to schedule timely local reminder alarms for debt due dates and automated daily database backups at your configured hour.</li>
+            <li><strong><code>RECEIVE_BOOT_COMPLETED</code>:</strong> Used to reschedule active local reminder alarms after your device restarts.</li>
+            <li><strong><code>VIBRATE</code>:</strong> Used for notification haptics when local reminders trigger.</li>
+            <li><strong>Storage Access (SAF / External Storage):</strong> Used solely to allow you to save database backups, export reports (PDF, CSV), or restore backups from your device's <code>Documents/PennyBook</code> folder or user-chosen directory.</li>
+            <li><strong>No Internet Permission:</strong> Version 1.0.0 does not declare <code>android.permission.INTERNET</code>. The application cannot transmit any data over the network.</li>
         </ul>
 
         <h2>5. Data Ownership, Backup & Deletion</h2>
         <p>You maintain 100% ownership and physical custody of your financial records:</p>
         <ul>
-            <li><strong>Database Backup & Portability:</strong> You can create encrypted database backups or export your complete financial records into CSV, Microsoft Excel (`.xlsx`), or PDF format at any time.</li>
-            <li><strong>One-Tap Data Deletion:</strong> You can permanently erase all transactions, accounts, and settings at any time via <em>Settings → Privacy & Security → Reset & Clear All Data</em>.</li>
+            <li><strong>User-Controlled Database Backups:</strong> You can create complete database backups (<code>.db</code> SQLite snapshots) at any time. Backup files are saved as <strong>unencrypted SQLite database files</strong> directly onto your device storage (such as <code>Documents/PennyBook</code>) or a folder chosen by you via Android's Storage Access Framework. Because backups are stored as unencrypted SQLite files, we strongly recommend storing them securely and avoiding sharing them with untrusted individuals.</li>
+            <li><strong>Data Export Portability:</strong> You can export your transactions into standard Comma-Separated Values (<code>.csv</code>) or structured PDF (<code>.pdf</code>) reports at any time. (PennyBook does not generate proprietary binary <code>.xlsx</code> files; CSV files can be opened in spreadsheet applications including Microsoft Excel and Google Sheets).</li>
+            <li><strong>One-Tap Data Deletion:</strong> You can permanently erase all transactions, Udhaar records, custom categories, monthly budgets, and preferences at any time via <em>Settings → Privacy & Security → Reset & Clear All Data</em>.</li>
             <li><strong>App Uninstallation:</strong> Uninstalling PennyBook immediately removes its internal private database sandbox from your device.</li>
         </ul>
 
